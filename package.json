@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "name": "space-workers",
+  "version": "1.0.0",
+  "description": "A Cloudflare Workers for Google Cloud Storage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format:check": "prettier --check '**/*.{js,css,json,md}'",
+    "format:write": "prettier --write '**/*.{js,css,json,md}'",
+    "format:diff": "prettier --list-different ."
+  },
+  "author": "Salvydas Lukosius <sall@w-ss.io>",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "2.5.1"
+  },
+  "engines": {
+    "node": ">=16",
+    "yarn": ">=3",
+    "pnpm": ">=6"
+  },
+  "packageManager": "yarn@3.2.0"
+}
