@@ -2,9 +2,5 @@ compatibility_date = "2022-02-15"
 name = "space"
 type = "webpack"
 account_id = "2db2112b269ed3616ed3a863a222f3e8"
-workers_dev = true
-routes = [""]
-zone_id = "3b32fa3a1e3a304dcc4963ea2623fe92"
-kv_namespaces = [
-         { binding = "CDN", id = "b585bd3cfb294b5584434ac268734ac0" }
-]
+workers_dev = false
+routes = ["cdn.digitalclouds.dev/*"]
