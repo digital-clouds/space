@@ -13,7 +13,7 @@
   "author": "Salvydas Lukosius <sall@w-ss.io>",
   "license": "MIT",
   "devDependencies": {
-    "prettier": "2.5.1"
+    "prettier": "2.6.0"
   },
   "engines": {
     "node": ">=16",
