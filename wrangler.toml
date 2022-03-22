@@ -3,5 +3,5 @@ name = "space"
 type = "webpack"
 account_id = "2db2112b269ed3616ed3a863a222f3e8"
 zone_id = "7600c132f040aea60b0533ad801986d5"
-workers_dev = false
-routes = ["cdn.digitalclouds.dev/*"]
+workers_dev = true
+routes = ["cdn.digitalclouds.dev"]
