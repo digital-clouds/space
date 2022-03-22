@@ -5,7 +5,7 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@cloudflare/wrangler@npm:^1.19.8":
+"@cloudflare/wrangler@npm:1.19.8":
   version: 1.19.8
   resolution: "@cloudflare/wrangler@npm:1.19.8"
   dependencies:
@@ -193,7 +193,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "space-workers@workspace:."
   dependencies:
-    "@cloudflare/wrangler": ^1.19.8
+    "@cloudflare/wrangler": 1.19.8
     prettier: 2.5.1
   languageName: unknown
   linkType: soft
