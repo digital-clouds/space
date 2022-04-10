@@ -1,8 +1,7 @@
 name = "space"
-type = "javascript"
+type = "webpack"
 compatibility_date = "2022-02-15"
 workers_dev = true
 account_id = "2db2112b269ed3616ed3a863a222f3e8"
 zone_id = "7600c132f040aea60b0533ad801986d5"
-usage_model = 'unbound'
-routes = ["cdn.digitalclouds.dev/*"]
+routes = [""]
