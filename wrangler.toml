@@ -2,5 +2,5 @@ name = "space"
 workers_dev = true
 account_id = "2db2112b269ed3616ed3a863a222f3e8"
 compatibility_date = "2022-03-15"
-routes = ["cdn.digitalclouds.dev/*", "z.digitalclouds.dev/assets/*"]
+routes = ["cdn.digitalclouds.dev/*"]
 main = "index.js"
