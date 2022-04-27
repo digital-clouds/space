@@ -7,5 +7,12 @@ pkg/
 wasm-pack.log
 worker/
 node_modules/
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 .pnpm-store/
 .cargo-ok
