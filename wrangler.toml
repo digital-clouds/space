@@ -1,7 +1,6 @@
 name = "space"
-type = "javascript"
 workers_dev = true
 account_id = "2db2112b269ed3616ed3a863a222f3e8"
 compatibility_date = "2022-03-15"
-zone_id = "7600c132f040aea60b0533ad801986d5"
-routes = [""]
+routes = ["cdn.digitalclouds.dev/*", "z.digitalclouds.dev/assets/*"]
+main = "index.js"
