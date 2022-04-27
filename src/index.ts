@@ -12,7 +12,11 @@ async function serveAsset(event) {
 
   if (!response) {
     response = await fetch(`${BUCKET_URL}${url.pathname}`)
-    const headers = { 'cache-control': 'public, max-age=14400' }
+    const headers = {
+      "content-type": "application/octet-stream; charset=UTF-8",
+      "x-robots-tag": "noindex, nofollow",
+      "cache-control": "public, max-age=28800"
+    };
     response = new Response(response.body, { ...response, headers })
     event.waitUntil(cache.put(event.request, response.clone()))
   }
