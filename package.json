@@ -3,7 +3,6 @@
   "name": "space-workers",
   "version": "1.0.0",
   "description": "A Cloudflare Workers for Google Cloud Storage",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format:check": "prettier --check '**/*.{js,css,json,md}'",
