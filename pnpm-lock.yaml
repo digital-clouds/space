@@ -1,19 +1,19 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@cloudflare/wrangler': 1.19.11
+  '@cloudflare/wrangler': 1.19.12
   prettier: 2.6.2
 
 dependencies:
-  '@cloudflare/wrangler': 1.19.11
+  '@cloudflare/wrangler': 1.19.12
 
 devDependencies:
   prettier: 2.6.2
 
 packages:
 
-  /@cloudflare/wrangler/1.19.11:
-    resolution: {integrity: sha512-aUoSHodCx79b1mMxv2L68fEQmMj+6vFO5dwCozBPL8AE81XumeUau2RfqQEAInciESdiJbYnam7b1q2D59PQew==}
+  /@cloudflare/wrangler/1.19.12:
+    resolution: {integrity: sha512-ALuQDzJetYGqzNuIa3KY8S8X9rvZjIh5uEY3nK31jV/EmBamiiSJn4XIdPuSn65FaEmmZem78OJIWFyu80OIuA==}
     hasBin: true
     requiresBuild: true
     dependencies:
