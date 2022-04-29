@@ -12,15 +12,13 @@
   "author": "Salvydas Lukosius <sall@w-ss.io>",
   "license": "MIT",
   "devDependencies": {
-    "prettier": "2.6.2"
+    "prettier": "2.6.2",
+    "wrangler": "0.0.27"
   },
   "engines": {
     "node": ">=16",
     "yarn": ">=3",
     "pnpm": ">=6"
   },
-  "packageManager": "yarn@3.2.0",
-  "dependencies": {
-    "wrangler": "0.0.27"
-  }
+  "packageManager": "yarn@3.2.0"
 }

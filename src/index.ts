@@ -9,7 +9,6 @@ async function serveAsset(event) {
   const url = new URL(event.request.url)
   const cache = caches.default
   let response = await cache.match(event.request)
-
   if (!response) {
     response = await fetch(`${BUCKET_URL}${url.pathname}`)
     const headers = {
