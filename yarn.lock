@@ -1160,6 +1160,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nanoid@npm:^3.3.3":
+  version: 3.3.4
+  resolution: "nanoid@npm:3.3.4"
+  bin:
+    nanoid: bin/nanoid.cjs
+  checksum: 2fddd6dee994b7676f008d3ffa4ab16035a754f4bb586c61df5a22cf8c8c94017aadd360368f47d653829e0569a92b129979152ff97af23a558331e47e37cd9c
+  languageName: node
+  linkType: hard
+
 "negotiator@npm:^0.6.3":
   version: 0.6.3
   resolution: "negotiator@npm:0.6.3"
@@ -1452,7 +1461,7 @@ __metadata:
   resolution: "space-workers@workspace:."
   dependencies:
     prettier: 2.6.2
-    wrangler: 0.0.29
+    wrangler: 0.0.31
   languageName: unknown
   linkType: soft
 
@@ -1574,9 +1583,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"wrangler@npm:0.0.29":
-  version: 0.0.29
-  resolution: "wrangler@npm:0.0.29"
+"wrangler@npm:0.0.31":
+  version: 0.0.31
+  resolution: "wrangler@npm:0.0.31"
   dependencies:
     "@esbuild-plugins/node-globals-polyfill": ^0.1.1
     "@esbuild-plugins/node-modules-polyfill": ^0.1.4
@@ -1584,6 +1593,7 @@ __metadata:
     esbuild: 0.14.34
     fsevents: ~2.3.2
     miniflare: 2.4.0
+    nanoid: ^3.3.3
     path-to-regexp: ^6.2.0
     selfsigned: ^2.0.1
     semiver: ^1.1.0
@@ -1594,7 +1604,7 @@ __metadata:
   bin:
     wrangler: bin/wrangler.js
     wrangler2: bin/wrangler.js
-  checksum: c6b8049873737bae5c59600f198104a0c1da66f567ccc273b5e0e4c54db21449f40c4670d38a4e933e11b0fed09492676b89686dbda201ac2a3ab2983bca390f
+  checksum: 33352d0a38578e4ffa0e8859dc844a5b5a7065f92fb84d38e9ae7d4a923697268de8b9b291b944340dc17054898ffedfca2279e8dd8e0344b6e6fbe8c5abeb0a
   languageName: node
   linkType: hard
 
