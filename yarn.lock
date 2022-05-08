@@ -1461,7 +1461,7 @@ __metadata:
   resolution: "space-workers@workspace:."
   dependencies:
     prettier: 2.6.2
-    wrangler: 0.0.33
+    wrangler: 0.0.34
   languageName: unknown
   linkType: soft
 
@@ -1583,9 +1583,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"wrangler@npm:0.0.33":
-  version: 0.0.33
-  resolution: "wrangler@npm:0.0.33"
+"wrangler@npm:0.0.34":
+  version: 0.0.34
+  resolution: "wrangler@npm:0.0.34"
   dependencies:
     "@esbuild-plugins/node-globals-polyfill": ^0.1.1
     "@esbuild-plugins/node-modules-polyfill": ^0.1.4
@@ -1604,7 +1604,7 @@ __metadata:
   bin:
     wrangler: bin/wrangler.js
     wrangler2: bin/wrangler.js
-  checksum: 3a839c1e100ba8558ce2c50958ad855aed713b0e510e0ab778fe7f7f5675ae6490df8d2e41a857985315f8db78a20933d9392ce907f174bc9f427a3aebddabb0
+  checksum: 8c6b0cd54513453335675bb1def9b49311634f56a9a9ae42f252afbd7d9b7e1fe7982d5f9d418900893de93f5fe3bdbbeaa394c7497b3859c0094960c7a559df
   languageName: node
   linkType: hard
 
