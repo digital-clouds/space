@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "space-workers",
+  "name": "space",
   "version": "1.0.0",
   "description": "A Cloudflare Workers for Google Cloud Storage",
   "scripts": {

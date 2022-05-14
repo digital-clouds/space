@@ -13,12 +13,9 @@ async function serveAsset(event) {
     response = await fetch(`${BUCKET_URL}${url.pathname}`)
     const headers = {
       'Cache-Control': 'must-revalidate, public, max-age=15552000',
-      'Cache-Control': 'max-age=14400, s-maxage=84000',
-      'Cloudflare-CDN-Cache-Control': 'max-age=24400',
-      'CDN-Cache-Control': 18000,
-   }
-   response = new Response(response.body, { ...response, headers })
-   event.waitUntil(cache.put(event.request, response.clone()))
+    }
+    response = new Response(response.body, { ...response, headers })
+    event.waitUntil(cache.put(event.request, response.clone()))
   }
   return response
 }
