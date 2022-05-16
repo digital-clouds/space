@@ -13,7 +13,7 @@ async function serveAsset(event) {
     response = await fetch(`${BUCKET_URL}${url.pathname}`)
     const headers = {
       'Cache-Control': 'must-revalidate, public, max-age=15552000',
-      'Access-Control-Allow-Origin': '*'.
+      'Access-Control-Allow-Origin': '*',
       'X-Robots-Tag': 'nosnippet',
     }
     response = new Response(response.body, { ...response, headers })
