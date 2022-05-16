@@ -14,7 +14,7 @@ async function serveAsset(event) {
     const headers = {
       'Cache-Control': 'must-revalidate, public, max-age=15552000',
       'Access-Control-Allow-Origin': '*',
-      'X-Robots-Tag': 'nosnippet',
+      'X-Robots-Tag': 'nosnippet, noindex',
     }
     response = new Response(response.body, { ...response, headers })
     event.waitUntil(cache.put(event.request, response.clone()))
