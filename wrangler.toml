@@ -1,5 +1,5 @@
 name = "space"
-workers_dev = false
+workers_dev = true
 routes = ["cdn.digitalclouds.dev", "cdn.digitalclouds.dev/*"]
 main = "src/index.ts"
 compatibility_date = "2022-04-27"

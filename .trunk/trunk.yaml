@@ -1,9 +1,9 @@
 version: 0.1
 cli:
-  version: 0.11.0-beta
+  version: 0.12.1-beta
 lint:
   enabled:
-    - gitleaks@8.8.4
+    - gitleaks@8.8.7
     - markdownlint@0.31.1
     - prettier@2.6.2
     - taplo-fmt@release-cli-0.6.3
