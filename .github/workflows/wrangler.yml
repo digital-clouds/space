@@ -4,11 +4,13 @@ name: '🤠 Wrangler'
 on:
   push:
     branches: [main]
+    paths: [src/**, .github/workflows/wrangler.yml]
   pull_request:
     branches: [main]
+    paths: [src/**, .github/workflows/wrangler.yml]
   workflow_dispatch:
   repository_dispatch:
-  
+
 jobs:
   wrangler:
     runs-on: ubuntu-latest
