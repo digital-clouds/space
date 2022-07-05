@@ -22,7 +22,7 @@ jobs:
     - id: 'upload-folder'
       uses: 'google-github-actions/upload-cloud-storage@v0'
       with:
-        path: '/upload/digital-space'
+        path: 'upload/digital-space'
         destination: 'digital-space'
 
 #    - id: 'uploaded-files'
