@@ -35,6 +35,6 @@ jobs:
           destination: 'gcp-space'
 
       - id: 'uploaded-files'
-        uses: 'digital-clouds/space/.github/workflows/upload-to-gcs.yml@main'
+        uses: 'digital-clouds/space@main'
         env:
           files: '${{ steps.upload-digital-space.outputs.uploaded }}'
