@@ -14,7 +14,7 @@ on:
 jobs:
   wrangler:
     runs-on: ubuntu-latest
-    timeout-minutes: 60    
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v3
       - name: '🤠 Run >>'

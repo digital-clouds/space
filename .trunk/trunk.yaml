@@ -1,18 +1,24 @@
 version: 0.1
 cli:
-  version: 0.12.1-beta
+  version: 0.14.1-beta
+repo:
+  repo:
+    host: github.com
+    owner: digital-clouds
+    name: space
 lint:
+  linters:
+    - name: markdownlint
+      command:
+        [markdownlint, -q, --config, .github/.markdownlint.yaml, '${target}']
+      direct_configs: [.github/.markdownlint.yaml]
   enabled:
-    - gitleaks@8.8.7
+    - actionlint@1.6.15
+    - gitleaks@8.8.11
     - markdownlint@0.31.1
-    - prettier@2.6.2
-    - taplo-fmt@release-cli-0.6.3
-    - taplo@release-cli-0.6.3
+    - prettier@2.7.1
+    - taplo@release-taplo-cli-0.6.8
   ignore:
     - linters: [ALL]
       paths:
-        - '.yarn/**'
-        - 'src/fa/**'
-#    - linters: [actionlint]
-#      paths:
-#        - .github/workflows/sync-labels.yml
+        - 'upload/**'
