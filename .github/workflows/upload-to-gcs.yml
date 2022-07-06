@@ -34,7 +34,7 @@ jobs:
           path: 'upload/gcp-space/assets'
           destination: 'gcp-space'
 
-      - id: 'uploaded-files'
-        uses: 'digital-clouds/space@main'
-        env:
-          files: '${{ steps.upload-digital-space.outputs.uploaded }}'
+#      - id: 'uploaded-files'
+#        uses: 'digital-clouds/space@main'
+#        env:
+#          files: '${{ steps.upload-digital-space.outputs.uploaded }}'
