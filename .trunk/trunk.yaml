@@ -9,9 +9,11 @@ repo:
 lint:
   linters:
     - name: markdownlint
-      command:
-        [markdownlint, -q, --config, .github/.markdownlint.yaml, '${target}']
+      command: [markdownlint, -q, --config, .github/.markdownlint.yaml, '${target}']
       direct_configs: [.github/.markdownlint.yaml]
+    - name: prettier
+      command: [prettier, -q, --config, .github/.prettierrc, '${target}']
+      direct_configs: [.github/.prettierrc]
   enabled:
     - actionlint@1.6.15
     - gitleaks@8.8.11
