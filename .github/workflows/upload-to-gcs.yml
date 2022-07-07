@@ -33,7 +33,6 @@ jobs:
         with:
           path: 'upload/gcp-space/assets'
           destination: 'gcp-space'
-
 #      - id: 'uploaded-files'
 #        uses: 'digital-clouds/space@main'
 #        env:

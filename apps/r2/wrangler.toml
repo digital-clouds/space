@@ -1,0 +1,7 @@
+name = "r2-space"
+main = "src/index.ts"
+compatibility_date = "2022-07-07"
+
+[[r2_buckets]]
+binding = "R2_SPACE"
+bucket_name = "r2-space"
