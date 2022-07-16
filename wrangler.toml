@@ -1,4 +1,4 @@
 name = "space"
-workers_dev = true
+workers_dev = false
 main = "src/index.ts"
 compatibility_date = "2022-04-27"
