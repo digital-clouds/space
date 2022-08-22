@@ -7,24 +7,24 @@ importers:
       '@cloudflare/workers-types': 3.14.1
       prettier: 2.7.1
       typescript: 4.7.4
-      wrangler: 2.0.26
+      wrangler: 2.0.27
     devDependencies:
       '@cloudflare/workers-types': 3.14.1
       prettier: 2.7.1
       typescript: 4.7.4
-      wrangler: 2.0.26
+      wrangler: 2.0.27
 
   apps/r2:
     specifiers:
       '@cloudflare/workers-types': 3.14.1
       prettier: 2.7.1
       typescript: 4.7.4
-      wrangler: 2.0.26
+      wrangler: 2.0.27
     devDependencies:
       '@cloudflare/workers-types': 3.14.1
       prettier: 2.7.1
       typescript: 4.7.4
-      wrangler: 2.0.26
+      wrangler: 2.0.27
 
 packages:
 
@@ -746,8 +746,8 @@ packages:
     resolution: {integrity: sha512-DOE84vZT2fEcl9gqCUTcnAw5ZY5Id55ikUcziSUntuEFL3pRvavg5kwDmTEUJkeCHInTlV/HexFomgYnzO5kdQ==}
     dev: true
 
-  /wrangler/2.0.26:
-    resolution: {integrity: sha512-r0uuk8Iu0iDmADG5l2DuN1++bis8giGSqjvXroiltd6jXd1xHgLhiAOowLpDK48CM9e6AYNVZ/0QF3XGCRUq/w==}
+  /wrangler/2.0.27:
+    resolution: {integrity: sha512-dH0Nv41OiFsHu+mZFMGv1kEO6lOEoxon8kKHToG0YSpGBsObsxurkoyWJDvkAgtnrM00QF8F1Chy15zs0sjJkg==}
     engines: {node: '>=16.7.0'}
     hasBin: true
     dependencies:
