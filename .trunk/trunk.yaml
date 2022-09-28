@@ -1,25 +1,39 @@
 version: 0.1
+runtimes:
+  enabled:
+    - go@1.18.3
+    - node@16.14.2
 cli:
-  version: 0.14.1-beta
+  version: 0.18.1-beta
+  options:
+    - commands: [check, fmt]
+    - args: -y
+plugins:
+  sources:
+    - id: trunk
+      ref: v0.0.4
+      uri: https://github.com/trunk-io/plugins
 repo:
   repo:
     host: github.com
     owner: digital-clouds
     name: space
-lint:
-  linters:
-    - name: markdownlint
-      command: [markdownlint, -q, --config, .github/.markdownlint.yaml, '${target}']
-      direct_configs: [.github/.markdownlint.yaml]
-    - name: prettier
-      command: [prettier, -q, --config, .github/.prettierrc, '${target}']
-      direct_configs: [.github/.prettierrc]
+actions:
   enabled:
-    - actionlint@1.6.15
-    - gitleaks@8.8.11
-    - markdownlint@0.31.1
+    - trunk-upgrade-available
+    - trunk-check-pre-push
+    - trunk-fmt-pre-commit
+    - trunk-cache-prune
+    - trunk-check-upgrade
+    - trunk-upgrade
+lint:
+  enabled:
+    - git-diff-check
+    - actionlint@1.6.19
+    - gitleaks@8.13.0
+    - markdownlint@0.32.2
     - prettier@2.7.1
-    - taplo@release-taplo-cli-0.6.8
+    - taplo@release-taplo-cli-0.7.0
   ignore:
     - linters: [ALL]
       paths:

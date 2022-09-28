@@ -1,32 +1,36 @@
-addEventListener('fetch', (event) => {
-  event.respondWith(handleRequest(event));
+addEventListener('fetch', async (event) => {
+  try {
+    return event.respondWith(handleRequest(event))
+  } catch (e) {
+    return event.respondWith(new Response(`Error thrown ${e.message}`))
+  }
 })
 
-const BUCKET_NAME = 'ss-o-team-bucket';
-const BUCKET_URL = `https://storageapi.fleek.co/${BUCKET_NAME}`;
-
 async function serveAsset(event) {
-  const url = new URL(event.request.url);
-  const cache = caches.default;
-  let response = await cache.match(event.request);
-
+  const request = event.request
+  const url = new URL(request.url)
+  const cache = caches.default
+  let response = await cache.match(request)
   if (!response) {
-    response = await fetch(`${BUCKET_URL}${url.pathname}`);
-    const headers = { 'cache-control': 'public, max-age=14400' };
-    response = new Response(response.body, { ...response, headers });
-    event.waitUntil(cache.put(event.request, response.clone()));
+    const BUCKET_NAME = 'ss-o-team-bucket'
+    const BUCKET_URL = `https://storageapi.fleek.co/${BUCKET_NAME}`
+    response = await fetch(`${BUCKET_URL}${url.pathname}`)
+    const headers = { 'cache-control': 'public, max-age=14400, s-maxage=84000' }
+    response = new Response(response.body, { ...response, headers })
+    event.waitUntil(cache.put(request, response.clone()))
   }
-  return response;
+  return response
 }
 
 async function handleRequest(event) {
-  if (event.request.method === 'GET') {
-    let response = await serveAsset(event);
+  const request = event.request
+  if (request.method === 'GET') {
+    let response = await serveAsset(event)
     if (response.status > 399) {
-      response = new Response(response.statusText, { status: response.status });
+      response = new Response(response.statusText, { status: response.status })
     }
-    return response;
+    return response
   } else {
-    return new Response('Method not allowed', { status: 405 });
+    return new Response('Method not allowed', { status: 405 })
   }
 }
