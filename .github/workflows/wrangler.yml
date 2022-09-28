@@ -4,30 +4,43 @@ name: '🤠 Wrangler'
 on:
   push:
     branches: [main]
-    paths: [src/**, .github/workflows/wrangler.yml]
-  pull_request:
-    branches: [main]
-    paths: [src/**, .github/workflows/wrangler.yml]
+    paths:
+      - "src/**"
+      - "apps/**"
   workflow_dispatch:
-  repository_dispatch:
+    inputs:
+      environment:
+        description: "Choose an environment to deploy to: <dev|staging|prod>"
+        required: true
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  wrangler:
+  deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 15
+    environment: wrangler
     steps:
       - uses: actions/checkout@v3
-      - name: '🤠 Run 1'
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'pnpm'
+          cache-dependency-path: pnpm-lock.yaml
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16          
+      - name: '🤠 wrangler'
         uses: cloudflare/wrangler-action@2.0.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
           workingDirectory: '.'
           command: "publish"
-      - name: '🤠 Run 2'
+      - name: '🤠 ipfs/bucket'
         uses: cloudflare/wrangler-action@2.0.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          accountId: ${{ secrets.CF_ACCOUNT_ID }}
           workingDirectory: '.'
           command: "publish --env ipfs-bucket" 
