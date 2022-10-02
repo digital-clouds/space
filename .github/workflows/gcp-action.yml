@@ -4,11 +4,11 @@ on:
   workflow_dispatch: {}
   push:
     branches: [main]
-    paths: [upload/**, .github/workflows/upload-to-gcs.yml]
+    paths: [gcs/**, .github/workflows/gcp-action.yml]
 
 jobs:
   job_id:
-    name: '🆙 Upload'
+    name: '🆙 GCP'
     runs-on: ubuntu-latest
     permissions:
       contents: 'read'
@@ -23,14 +23,14 @@ jobs:
       - id: 'upload-digital-space'
         uses: 'google-github-actions/upload-cloud-storage@v0'
         with:
-          path: 'upload/digital-space/assets'
+          path: 'gcs/63ab8820-bc9f-43aa-9045-801ac5af4bb6'
           destination: 'digital-space'
       - id: 'uploaded'
-        uses: 'digital-clouds/space@main'
+        uses: 'digital-clouds/space/gcp-action@main'
         env:
           files: '${{ steps.upload-digital-space.outputs.uploaded }}'
       - id: 'upload-gcp-space'
         uses: 'google-github-actions/upload-cloud-storage@v0'
         with:
-          path: 'upload/gcp-space/assets'
+          path: 'gcs/2d8aa135-97c0-4ab1-8443-2eafcec4055e'
           destination: 'gcp-space'
