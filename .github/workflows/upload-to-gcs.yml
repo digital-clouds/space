@@ -18,19 +18,19 @@ jobs:
       - id: 'auth'
         uses: 'google-github-actions/auth@v0'
         with:
-          workload_identity_provider: 'projects/410787283689/locations/global/workloadIdentityPools/id-pool/providers/id-provider'
-          service_account: 'gcp-account@digital-clouds.iam.gserviceaccount.com'
+          workload_identity_provider: '${{ secrets.DIGITAL_CLOUDS_PROVIDER }}'
+          service_account: '${{ secrets.DIGITAL_CLOUDS_SERVICE }}'
       - id: 'upload-digital-space'
         uses: 'google-github-actions/upload-cloud-storage@v0'
         with:
           path: 'upload/digital-space/assets'
-          destination: 'digital-space/assets'
+          destination: 'digital-space'
+      - id: 'uploaded'
+        uses: 'digital-clouds/space@main'
+        env:
+          files: '${{ steps.upload-digital-space.outputs.uploaded }}'
       - id: 'upload-gcp-space'
         uses: 'google-github-actions/upload-cloud-storage@v0'
         with:
           path: 'upload/gcp-space/assets'
-          destination: 'gcp-space/assets'
-#      - id: 'uploaded-files'
-#        uses: 'digital-clouds/space@main'
-#        env:
-#          files: '${{ steps.upload-digital-space.outputs.uploaded }}'
+          destination: 'gcp-space'
