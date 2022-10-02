@@ -25,12 +25,19 @@ jobs:
         with:
           path: 'gcs/63ab8820-bc9f-43aa-9045-801ac5af4bb6'
           destination: 'digital-space'
-      - id: 'uploaded'
-        uses: 'digital-clouds/space/gcp-action@main'
-        env:
-          files: '${{ steps.upload-digital-space.outputs.uploaded }}'
+      #- id: 'uploaded'
+      #  uses: 'digital-clouds/space/gcp-action@main'
+      #  env:
+      #    files: '${{ steps.upload-digital-space.outputs.uploaded }}'
       - id: 'upload-gcp-space'
         uses: 'google-github-actions/upload-cloud-storage@v0'
         with:
           path: 'gcs/2d8aa135-97c0-4ab1-8443-2eafcec4055e'
           destination: 'gcp-space'
+
+      # https://github.com/google-github-actions/setup-gcloud#cloud-sdk-inputs
+      - name: "Google Cloud SDK"
+        id: "setup-gcloud"
+        uses: "google-github-actions/setup-gcloud@v0"
+      - name: "gcloud CLI"
+        run: "gcloud info"
