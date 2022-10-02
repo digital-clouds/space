@@ -36,8 +36,8 @@ jobs:
           destination: 'gcp-space'
 
       # https://github.com/google-github-actions/setup-gcloud#cloud-sdk-inputs
-      - name: "Google Cloud SDK"
-        id: "setup-gcloud"
-        uses: "google-github-actions/setup-gcloud@v0"
-      - name: "gcloud CLI"
-        run: "gcloud info"
+      - name: 'Google Cloud SDK'
+        id: 'setup-gcloud'
+        uses: 'google-github-actions/setup-gcloud@v0'
+      - name: 'gcloud CLI'
+        run: 'gcloud info'
