@@ -22,5 +22,5 @@
     "yarn": "3.2.4",
     "pnpm": ">=6"
   },
-  "packageManager": "pnpm@7.13.5"
+  "packageManager": "pnpm@7.13.6"
 }
