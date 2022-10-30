@@ -4,9 +4,8 @@ name: '🤠 Wrangler'
 on:
   push:
     branches: [main]
-    paths:
-      - 'src/**'
-      - 'apps/**'
+  schedule:
+    - cron: '0 02 * * */2'
   workflow_dispatch:
     inputs:
       environment:
@@ -24,13 +23,13 @@ jobs:
     environment: wrangler
     steps:
       - uses: actions/checkout@v3
-      - name: '🤠 wrangler'
+      - name: '🤠 cdn.digitalclouds.dev'
         uses: cloudflare/wrangler-action@2.0.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           workingDirectory: '.'
           command: 'publish'
-      - name: '🤠 ipfs/bucket'
+      - name: '🤠 ipfs.digitalclouds.dev'
         uses: cloudflare/wrangler-action@2.0.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
