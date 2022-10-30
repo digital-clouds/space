@@ -1,9 +1,8 @@
 name = "space"
 workers_dev = true
 main = "src/index.ts"
+compatibility_date = "2022-10-30"
 account_id = "2db2112b269ed3616ed3a863a222f3e8"
-compatibility_date = "2022-09-28"
-compatibility_flags = ["formdata_parser_supports_files"]
 tsconfig = "./tsconfig.json"
 
 [env.ipfs-bucket]

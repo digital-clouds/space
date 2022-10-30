@@ -1,12 +1,14 @@
 addEventListener('fetch', async (event) => {
   try {
     return event.respondWith(handleRequest(event))
-  } catch (e) {
-    return event.respondWith(new Response(`Error thrown ${e.message}`))
+  } catch (err: unknown) {
+    if (err instanceof Error) {
+      return event.respondWith(new Response(`Error thrown ${err.message}`))
+    }
   }
 })
 
-async function serveAsset(event) {
+async function serveAsset(event: FetchEvent): Promise<Response> {
   const request = event.request
   const url = new URL(request.url)
   const cache = caches.default
@@ -22,7 +24,7 @@ async function serveAsset(event) {
   return response
 }
 
-async function handleRequest(event) {
+async function handleRequest(event: FetchEvent): Promise<Response> {
   const request = event.request
   if (request.method === 'GET') {
     let response = await serveAsset(event)
@@ -34,3 +36,5 @@ async function handleRequest(event) {
     return new Response('Method not allowed', { status: 405 })
   }
 }
+
+export {}

@@ -4,7 +4,7 @@ on:
   workflow_dispatch: {}
   push:
     branches: [main]
-    paths: 
+    paths:
       - 'gcs/**'
       - '.github/workflows/gcp-action.yml'
 
