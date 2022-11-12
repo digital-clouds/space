@@ -5,7 +5,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'gcs/**'
+      - 'gcs/2d8aa135-97c0-4ab1-8443-2eafcec4055e/*'
   pull_request:
     paths:
       - '.github/workflows/gcp-action.yml'
@@ -29,12 +29,12 @@ jobs:
         with:
           workload_identity_provider: '${{ secrets.DIGITAL_CLOUDS_PROVIDER }}'
           service_account: '${{ secrets.DIGITAL_CLOUDS_SERVICE }}'
-      - name: '📤 digital-space'
-        id: 'upload-digital-space'
-        uses: 'google-github-actions/upload-cloud-storage@v0'
-        with:
-          path: 'gcs/63ab8820-bc9f-43aa-9045-801ac5af4bb6'
-          destination: 'digital-space'
+      #- name: '📤 digital-space'
+      #  id: 'upload-digital-space'
+      #  uses: 'google-github-actions/upload-cloud-storage@v0'
+      #  with:
+      #    path: 'gcs/63ab8820-bc9f-43aa-9045-801ac5af4bb6'
+      #    destination: 'digital-space'
       #- id: 'uploaded'
       #  uses: 'digital-clouds/space/gcp-action@main'
       #  env:
