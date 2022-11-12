@@ -5,10 +5,13 @@ on:
   push:
     branches: [main]
     paths:
-      - 'gcs/2d8aa135-97c0-4ab1-8443-2eafcec4055e/*'
+      - './gcs/2d8aa135-97c0-4ab1-8443-2eafcec4055e/**'
+      - '.github/workflows/gcp-action.yml'      
   pull_request:
+    branches: [main]
     paths:
-      - '.github/workflows/gcp-action.yml'
+      - './gcs/2d8aa135-97c0-4ab1-8443-2eafcec4055e/**'
+      - '.github/workflows/gcp-action.yml'      
 
 jobs:
   job_id:
