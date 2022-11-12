@@ -6,11 +6,9 @@ on:
     branches: [main]
     paths:
       - 'gcs/**'
+  pull_request:
+    paths:
       - '.github/workflows/gcp-action.yml'
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
 
 jobs:
   job_id:
@@ -21,6 +19,9 @@ jobs:
       id-token: 'write'
     timeout-minutes: 15
     environment: google-cloud
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
     steps:
       - uses: 'actions/checkout@v3'
       - id: 'auth'
