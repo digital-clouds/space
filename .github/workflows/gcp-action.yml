@@ -12,6 +12,10 @@ on:
       - './gcs/**'
       - '.github/workflows/gcp-action.yml'
 
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   job_id:
     name: '🆙 GCP'
@@ -19,14 +23,12 @@ jobs:
     strategy:
       matrix:
         bucket: [digital-space, gcp-space]
+      fail-fast: false
     permissions:
       contents: 'read'
       id-token: 'write'
     timeout-minutes: 15
     environment: google-cloud
-    concurrency:
-      group: ci-${{ github.workflow }}-${{ github.ref }}
-      cancel-in-progress: true
     steps:
       - uses: 'actions/checkout@v3'
       - id: 'auth'
@@ -41,10 +43,6 @@ jobs:
         with:
           path: 'gcs/63ab8820-bc9f-43aa-9045-801ac5af4bb6'
           destination: 'digital-space'
-      - id: 'uploaded'
-        uses: 'digital-clouds/space/gcp-action@main'
-        env:
-          files: '${{ steps.upload-digital-space.outputs.uploaded }}'
       - if: startsWith(matrix.bucket, 'gcp-space')
         name: '📤 gcp-space'
         id: 'upload-gcp-space'
