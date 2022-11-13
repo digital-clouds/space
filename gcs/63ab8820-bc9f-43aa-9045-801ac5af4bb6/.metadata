@@ -1,0 +1,8 @@
+# Bucket Metadata
+
+| Key         | Value                                                                             |
+| :---------- | :----------------------------------------------------------------------------     |
+| Name:       | digital-space                                                                     |
+| Region:     | us (multiple regions in United States)                                            |
+| Public URL: | https://storage.googleapis.com/digital-space/63ab8820-bc9f-43aa-9045-801ac5af4bb6 |
+| gsutil URI: | gs://digital-space/63ab8820-bc9f-43aa-9045-801ac5af4bb6                           |
