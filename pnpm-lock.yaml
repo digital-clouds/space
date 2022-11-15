@@ -6,12 +6,12 @@ importers:
     specifiers:
       '@cloudflare/workers-types': 3.18.0
       '@trunkio/launcher': 1.2.3
-      typescript: 4.8.4
+      typescript: 4.9.3
       wrangler: 2.2.2
     devDependencies:
       '@cloudflare/workers-types': 3.18.0
       '@trunkio/launcher': 1.2.3
-      typescript: 4.8.4
+      typescript: 4.9.3
       wrangler: 2.2.2
 
 packages:
@@ -874,8 +874,8 @@ packages:
       is-number: 7.0.0
     dev: true
 
-  /typescript/4.8.4:
-    resolution: {integrity: sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ==}
+  /typescript/4.9.3:
+    resolution: {integrity: sha512-CIfGzTelbKNEnLpLdGFgdyKhG23CKdKgQPOBc+OUNrkJ2vr+KSzsSV5kq5iWhEQbok+quxgGzrAtGWCyU7tHnA==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
