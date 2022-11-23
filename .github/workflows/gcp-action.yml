@@ -7,10 +7,6 @@ on:
     paths:
       - './gcs/**'
       - '.github/workflows/gcp-action.yml'
-  pull_request:
-    paths:
-      - './gcs/**'
-      - '.github/workflows/gcp-action.yml'
 
 concurrency:
   group: ci-${{ github.workflow }}-${{ github.ref }}
