@@ -7,10 +7,6 @@ on:
     paths:
       - './gcs/**'
       - '.github/workflows/gcp-action.yml'
-  pull_request:
-    paths:
-      - './gcs/**'
-      - '.github/workflows/gcp-action.yml'
 
 concurrency:
   group: ci-${{ github.workflow }}-${{ github.ref }}
@@ -39,14 +35,14 @@ jobs:
       - if: startsWith(matrix.bucket, 'digital-space')
         name: '📤 digital-space'
         id: 'upload-digital-space'
-        uses: 'google-github-actions/upload-cloud-storage@v0'
+        uses: 'google-github-actions/upload-cloud-storage@v1'
         with:
           path: 'gcs/63ab8820-bc9f-43aa-9045-801ac5af4bb6'
           destination: 'digital-space'
       - if: startsWith(matrix.bucket, 'gcp-space')
         name: '📤 gcp-space'
         id: 'upload-gcp-space'
-        uses: 'google-github-actions/upload-cloud-storage@v0'
+        uses: 'google-github-actions/upload-cloud-storage@v1'
         with:
           path: 'gcs/2d8aa135-97c0-4ab1-8443-2eafcec4055e'
           destination: 'gcp-space'
