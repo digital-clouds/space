@@ -3,10 +3,8 @@ name: '🔵 GCP Action'
 on:
   workflow_dispatch: {}
   push:
-    branches: [main, next]
-    paths:
-      - './gcs/**'
-      - '.github/workflows/gcp-action.yml'
+    branches: [main]
+    paths: [gcs/**, .github/workflows/gcp-action.yml]
 
 concurrency:
   group: ci-${{ github.workflow }}-${{ github.ref }}
