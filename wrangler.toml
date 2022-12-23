@@ -2,9 +2,6 @@ name = "digital-space"
 main = "src/index.ts"
 compatibility_date = "2022-12-20"
 account_id = "2db2112b269ed3616ed3a863a222f3e8"
-
-[env.prod]
-name = "digital-space"
 routes = [
   { pattern = "cdn.digitalclouds.dev", custom_domain = true, zone_name = "digitalclouds.dev" },
 ]
