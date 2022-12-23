@@ -3,4 +3,3 @@ main = "src/index.ts"
 compatibility_date = "2022-12-20"
 account_id = "2db2112b269ed3616ed3a863a222f3e8"
 workers_dev = true
-route = "digitalclouds.dev/space/*"
