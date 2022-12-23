@@ -1,17 +1,11 @@
-name = "space"
-workers_dev = true
+name = "digital-space"
+workers_dev = false
 main = "src/index.ts"
-compatibility_date = "2022-10-30"
+compatibility_date = "2022-12-20"
 account_id = "2db2112b269ed3616ed3a863a222f3e8"
 route = { pattern = "cdn.digitalclouds.dev", custom_domain = true }
-tsconfig = "./tsconfig.json"
 
 [env.ipfs-bucket]
 name = "ipfs-bucket"
 workers_dev = true
 main = "src/ipfs-bucket.ts"
-tsconfig = "./tsconfig.json"
-
-#[[r2_buckets]]
-#inding = "R2_STORE"
-#bucket_name = "r2-store"

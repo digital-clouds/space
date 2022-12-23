@@ -1,23 +1,37 @@
 version: 0.1
-runtimes:
-  enabled:
-    - go@1.18.3
-    - node@16.14.2
 cli:
-  version: 1.1.0
+  version: 1.2.1
   options:
-    - commands: [check, fmt]
-    - args: -y
+    - commands: [ALL]
+      args: --monitor=true
+    - commands: [check]
+      args: -y
 plugins:
   sources:
     - id: trunk
-      ref: v0.0.6
+      ref: v0.0.8
       uri: https://github.com/trunk-io/plugins
 repo:
   repo:
     host: github.com
     owner: digital-clouds
     name: space
+lint:
+  enabled:
+    - git-diff-check
+    - actionlint@1.6.22
+    - gitleaks@8.15.2
+    - markdownlint@0.32.2
+    - prettier@2.8.1
+    - taplo@0.7.0
+  ignore:
+    - linters: [ALL]
+      paths:
+        - gcs/*
+runtimes:
+  enabled:
+    - go@1.19.4
+    - node@18.12.1
 actions:
   enabled:
     - trunk-announce
@@ -25,15 +39,3 @@ actions:
     - trunk-fmt-pre-commit
     - trunk-upgrade-available
     - trunk-cache-prune
-lint:
-  enabled:
-    - git-diff-check
-    - actionlint@1.6.22
-    - gitleaks@8.15.0
-    - markdownlint@0.32.2
-    - prettier@2.7.1
-    - taplo@0.7.0
-  ignore:
-    - linters: [ALL]
-      paths:
-        - gcs/*
