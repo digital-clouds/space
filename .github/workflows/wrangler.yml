@@ -30,3 +30,9 @@ jobs:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           workingDirectory: 'workers/digital-space'
           command: publish
+      - name: '🤠 GCP Space'
+        uses: cloudflare/wrangler-action@2.0.0
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          workingDirectory: 'workers/gcp-space'
+          command: publish
