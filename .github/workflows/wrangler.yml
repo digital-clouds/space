@@ -10,6 +10,7 @@ on:
     inputs:
       environment:
         description: 'Choose an environment to deploy to: <dev|staging|prod>'
+        default: 'prod'
         required: true
 
 concurrency:
@@ -28,10 +29,10 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           workingDirectory: '.'
-          command: 'publish'
-      - name: '🤠 ipfs.digitalclouds.dev'
-        uses: cloudflare/wrangler-action@2.0.0
-        with:
-          apiToken: ${{ secrets.CF_API_TOKEN }}
-          workingDirectory: '.'
-          command: 'publish --env ipfs-bucket'
+          command: publish --env ${{ github.event.inputs.environment }}
+      #- name: '🤠 ipfs.digitalclouds.dev'
+      #  uses: cloudflare/wrangler-action@2.0.0
+      #  with:
+      #    apiToken: ${{ secrets.CF_API_TOKEN }}
+      #    workingDirectory: '.'
+      #    command: 'publish --env ipfs-bucket'

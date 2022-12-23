@@ -32,15 +32,3 @@ pnpm run start
 # Publish Worker to Cloudflare
 pnpm run deploy
 ```
-
-Bucket: https://ipfs.digitalclouds.dev
-
-```shell
-# Start a local server for developing worker
-pnpm run start --env ipfs-bucket
-```
-
-```shell
-# Publish Worker to Cloudflare
-pnpm run deploy --env ipfs-bucket
-```

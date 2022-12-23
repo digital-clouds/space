@@ -1,11 +1,21 @@
 name = "digital-space"
-workers_dev = true
 main = "src/index.ts"
 compatibility_date = "2022-12-20"
 account_id = "2db2112b269ed3616ed3a863a222f3e8"
-route = { pattern = "cdn.digitalclouds.dev", custom_domain = true }
 
-#[env.ipfs-bucket]
-#name = "ipfs-bucket"
-#workers_dev = true
-#main = "src/ipfs-bucket.ts"
+[env.prod]
+name = "digital-space"
+routes = [
+  { pattern = "cdn.digitalclouds.dev", custom_domain = true, zone_name = "digitalclouds.dev" },
+]
+vars = { ENVIRONMENT = "production" }
+
+[env.dev]
+name = "digital-space-dev"
+workers_dev = true
+vars = { ENVIRONMENT = "dev" }
+
+[env.staging]
+name = "digital-space-staging"
+workers_dev = true
+vars = { ENVIRONMENT = "staging" }
