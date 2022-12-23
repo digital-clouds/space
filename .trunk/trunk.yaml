@@ -28,6 +28,7 @@ lint:
     - linters: [ALL]
       paths:
         - gcs/*
+        - ipfs/*
 runtimes:
   enabled:
     - go@1.19.4
