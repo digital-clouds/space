@@ -1,11 +1,11 @@
 name = "digital-space"
-workers_dev = false
+workers_dev = true
 main = "src/index.ts"
 compatibility_date = "2022-12-20"
 account_id = "2db2112b269ed3616ed3a863a222f3e8"
 route = { pattern = "cdn.digitalclouds.dev", custom_domain = true }
 
-[env.ipfs-bucket]
-name = "ipfs-bucket"
-workers_dev = true
-main = "src/ipfs-bucket.ts"
+#[env.ipfs-bucket]
+#name = "ipfs-bucket"
+#workers_dev = true
+#main = "src/ipfs-bucket.ts"
