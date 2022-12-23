@@ -7,7 +7,7 @@ export interface Env {
 	// MY_DURABLE_OBJECT: DurableObjectNamespace;
 	//
 	// Example binding to R2. Learn more at https://developers.cloudflare.com/workers/runtime-apis/r2/
-	// MY_BUCKET: R2Bucket;
+	// R2_BUCKET: R2Bucket;
 }
 
 export default {
@@ -17,12 +17,9 @@ export default {
 
 		if (request.method === 'GET') {
 			const url = new URL(request.url);
-			const cacheKey = new Request(url.toString(), {
-				headers: request.headers,
-				method: 'GET',
-				cf: request.cf,
-			});
+			const cacheKey = new Request(url.toString(), request);
 			const cache = caches.default;
+
 			let response = await cache.match(cacheKey);
 
 			if (!response) {
@@ -38,6 +35,7 @@ export default {
 				response = new Response(response.body, { ...response, headers });
 				ctx.waitUntil(cache.put(cacheKey, response.clone()));
 			}
+
 			if (response.status > 399) {
 				response = new Response(response.statusText, { status: response.status });
 			}
