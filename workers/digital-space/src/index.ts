@@ -1,7 +1,17 @@
 // Description: Digital Space Worker
+export interface Env {
+	// Example binding to KV. Learn more at https://developers.cloudflare.com/workers/runtime-apis/kv/
+	// MY_KV_NAMESPACE: KVNamespace;
+	//
+	// Example binding to Durable Object. Learn more at https://developers.cloudflare.com/workers/runtime-apis/durable-objects/
+	// MY_DURABLE_OBJECT: DurableObjectNamespace;
+	//
+	// Example binding to R2. Learn more at https://developers.cloudflare.com/workers/runtime-apis/r2/
+	// MY_BUCKET: R2Bucket;
+}
 
 export default {
-	async fetch(request, env, context) {
+	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
 		const BUCKET_NAME = 'digital-space';
 		const BUCKET_HOST = `https://storage.googleapis.com/${BUCKET_NAME}`;
 
@@ -26,7 +36,7 @@ export default {
 					'x-goog-project-id': 'digital-clouds',
 				};
 				response = new Response(response.body, { ...response, headers });
-				context.waitUntil(cache.put(cacheKey, response.clone()));
+				ctx.waitUntil(cache.put(cacheKey, response.clone()));
 			}
 			if (response.status > 399) {
 				response = new Response(response.statusText, { status: response.status });
