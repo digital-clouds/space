@@ -1,30 +1,32 @@
 addEventListener('fetch', async (event) => {
   try {
     return event.respondWith(handleRequest(event))
-  } catch (err: unknown) {
-    if (err instanceof Error) {
-      return event.respondWith(new Response(`Error thrown ${err.message}`))
-    }
+  } catch (e) {
+    return event.respondWith(new Response(`Error thrown ${e.message}`))
   }
 })
 
-async function serveAsset(event: FetchEvent): Promise<Response> {
+async function serveAsset(event) {
   const request = event.request
   const url = new URL(request.url)
   const cache = caches.default
   let response = await cache.match(request)
   if (!response) {
     const BUCKET_NAME = 'digital-space'
-    const BUCKET_URL = `https://storage.googleapis.com/${BUCKET_NAME}`
-    response = await fetch(`${BUCKET_URL}${url.pathname}`)
-    const headers = { 'cache-control': 'public, max-age=14400, s-maxage=84000' }
+    const HOST_URL = `https://storage.googleapis.com/${BUCKET_NAME}`
+    response = await fetch(`${HOST_URL}${url.pathname}`)
+    const headers = {
+      'cache-control': 'public, max-age=14400, s-maxage=84000',
+      'x-goog-project-id': 'digital-clouds',
+      'access-control-allow-origin': '*',
+    }
     response = new Response(response.body, { ...response, headers })
     event.waitUntil(cache.put(request, response.clone()))
   }
   return response
 }
 
-async function handleRequest(event: FetchEvent): Promise<Response> {
+async function handleRequest(event) {
   const request = event.request
   if (request.method === 'GET') {
     let response = await serveAsset(event)
@@ -36,5 +38,3 @@ async function handleRequest(event: FetchEvent): Promise<Response> {
     return new Response('Method not allowed', { status: 405 })
   }
 }
-
-export {}
