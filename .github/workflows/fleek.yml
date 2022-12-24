@@ -1,0 +1,34 @@
+---
+name: '💎 Fleek'
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 02 * * */2'
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Choose an environment to deploy to: <dev|staging|prod>'
+        default: 'prod'
+        required: true
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment: fleek
+    steps:
+      - uses: actions/checkout@v3
+      - name: '💎 Deploy'
+        id: deploy
+        uses: fleekhq/action-deploy@v1
+        with:
+          apiKey: ${{ secrets.FLEEK_API_KEY }}
+          #workDir:
+      - name: 'URL output'
+        run: echo "Deploy url is ${{ steps.deploy.outputs.deployUrl }}"

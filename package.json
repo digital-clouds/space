@@ -1,0 +1,33 @@
+{
+  "name": "space",
+  "version": "1.0.0",
+  "description": "",
+  "license": "GPL-3.0",
+  "scripts": {
+    "clean": "pnpm -sr exec rm -rf node_modules",
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "pnpm audit",
+    "upgrade": "pnpm upgrade -i -L",
+    "deploy": "pnpm -rs run deploy",
+    "deploy:digital-space": "pnpm -rs run --filter digital-space deploy",
+    "deploy:ipfs-space": "pnpm -rs run --filter ipfs-space deploy",
+    "deploy:gcp-space": "pnpm -rs run --filter gcp-space deploy",
+    "dev:digital-space": "pnpm -rs run --filter digital-space dev",
+    "dev:ipfs-space": "pnpm -rs run --filter ipfs-space dev",
+    "dev:gcp-space": "pnpm -rs run --filter gcp-space dev",
+    "fmt": "trunk fmt",
+    "check": "trunk check"
+  },
+  "dependencies": {
+    "digital-space": "*",
+    "ipfs-space": "*",
+    "gcp-space": "*"
+  },
+  "devDependencies": {
+    "@trunkio/launcher": "1.2.3"
+  },
+  "packageManager": "pnpm@7.19.0",
+  "engines": {
+    "node": ">=16.14"
+  }
+}
