@@ -22,6 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     environment: wrangler
+    if: github.repository == 'digital-clouds/space'    
     steps:
       - uses: actions/checkout@v3
       - name: '🤠 Digital Space'
