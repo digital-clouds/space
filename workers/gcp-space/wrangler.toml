@@ -4,5 +4,5 @@ compatibility_date = "2022-12-20"
 account_id = "2db2112b269ed3616ed3a863a222f3e8"
 workers_dev = true
 routes = [
-  { pattern = "storage.w-ss.io/gcp/*", zone_id = "7600c132f040aea60b0533ad801986d5" }
+  { pattern = "storage.w-ss.io/*", zone_id = "7600c132f040aea60b0533ad801986d5" },
 ]
