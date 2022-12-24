@@ -12,8 +12,8 @@ export interface Env {
 
 export default {
 	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
-		const BUCKET_NAME = 'digital-space';
-		const BUCKET_HOST = `https://storage.googleapis.com/${BUCKET_NAME}`;
+		const BUCKET_NAME = 'ss-o-team-bucket';
+		const BUCKET_HOST = `https://storageapi.fleek.co/${BUCKET_NAME}`;
 
 		try {
 			if (request.method === 'GET') {
