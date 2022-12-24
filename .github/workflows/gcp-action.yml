@@ -23,6 +23,7 @@ jobs:
       id-token: 'write'
     timeout-minutes: 15
     environment: google-cloud
+    if: github.repository == 'digital-clouds/space'    
     steps:
       - uses: 'actions/checkout@v3'
       - id: 'auth'
