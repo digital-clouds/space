@@ -16,7 +16,18 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: '⤵️  Check out code from GitHub'
         uses: actions/checkout@v3
-      - name: Trunk
+      - name: '🏗  Initialize PNPM'
+        uses: pnpm/action-setup@v2.2.4
+      - name: '🏗  Initialize Node'
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'pnpm'
+          always-auth: true
+          check-latest: true
+      - name: '🏗  Install Dependencies'
+        run: pnpm install
+      - name: '⭕ Trunk Check'
         uses: trunk-io/trunk-action@2cda8a0c9923423307c2c3efe676a4c4614e46e6
