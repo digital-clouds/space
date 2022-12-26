@@ -1,18 +1,21 @@
-const BUCKET_NAME = 'ss-o-team-bucket';
-const BUCKET_HOST = `https://storageapi.fleek.co/${BUCKET_NAME}`;
+export interface Env {
+	[key: string]: string;
+}
 
 export default {
-	async fetch(request, env, ctx) {
+	async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
 		try {
 			if (request.method === 'GET') {
 				const url = new URL(request.url);
 				const cacheKey = new Request(url.toString(), request);
 				const cache = caches.default;
+				const bucketName = 'ss-o-team-bucket';
+				const bucketHost = `https://storageapi.fleek.co/${bucketName}`;
 
 				let response = await cache.match(cacheKey);
 
 				if (!response) {
-					response = await fetch(`${BUCKET_HOST}${url.pathname}`);
+					response = await fetch(`${bucketHost}${url.pathname}`);
 					const headers = {
 						'Cache-Control': 'public, max-age=14400',
 						'Access-Control-Allow-Origin': '*',
@@ -34,8 +37,9 @@ export default {
 			}
 		} catch (err) {
 			if (err instanceof Error) {
-				return new Response(`Error thrown ${err.message}`);
+				return new Response(`Error thrown ${err.message}`, { status: 500 });
 			}
+			return new Response(`Error thrown ${err}`, { status: 500 });
 		}
 	},
 };

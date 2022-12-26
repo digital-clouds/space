@@ -15,7 +15,8 @@
     "dev:ipfs-space": "pnpm -rs run --filter ipfs-space dev",
     "dev:gcp-space": "pnpm -rs run --filter gcp-space dev",
     "fmt": "trunk fmt",
-    "check": "trunk check"
+    "check": "trunk check",
+    "tsc": "pnpm -r exec tsc"
   },
   "devDependencies": {
     "@trunkio/launcher": "1.2.3",
@@ -26,20 +27,10 @@
     "eslint-import-resolver-typescript": "3.5.2",
     "eslint-plugin-import": "2.26.0",
     "prettier": "2.8.1",
-    "typescript": "^4.9.4"
+    "typescript": "4.5.4"
   },
   "engines": {
     "node": ">=16.14.0"
   },
-  "packageManager": "pnpm@7.20.0",
-  "pnpm": {
-    "overrides": {
-      "minimist@<1.2.6": ">=1.2.6",
-      "npm@<6.13.3": ">=6.13.3",
-      "minimist@>=1.0.0 <1.2.3": ">=1.2.3",
-      "npm@<5.7.1": ">=5.7.1",
-      "npm@<6.14.6": ">=6.14.6",
-      "npm@<6.13.4": ">=6.13.4"
-    }
-  }
+  "packageManager": "pnpm@7.20.0"
 }
