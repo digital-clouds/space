@@ -1,5 +1,5 @@
 ---
-name: '🤠 Wrangler'
+name: '🤠 Wrangler Action'
 
 on:
   push:
@@ -18,7 +18,7 @@ jobs:
   deploy:
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
-      cancel-in-progress: true  
+      cancel-in-progress: true
     runs-on: ubuntu-latest
     timeout-minutes: 15
     environment: wrangler

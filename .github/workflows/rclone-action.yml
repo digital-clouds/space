@@ -1,11 +1,11 @@
 ---
-name: "🔄 Rclone"
+name: '🔄 Rclone Action'
 
 on:
   push:
     branches: [main]
     paths:
-      - "ipfs/**"
+      - 'ipfs/**'
   workflow_dispatch: {}
 
 jobs:
@@ -16,14 +16,14 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true
     env:
-      local_path: "ipfs/2ee30c81-79ef-44d3-b487-c90bf9cff679"
-      remote_path: "fleek:2ee30c81-79ef-44d3-b487-c90bf9cff679"
+      local_path: 'ipfs/2ee30c81-79ef-44d3-b487-c90bf9cff679'
+      remote_path: 'fleek:2ee30c81-79ef-44d3-b487-c90bf9cff679'
     steps:
-      - name: "⤵️ Check out code from GitHub"
+      - name: '⤵️ Check out code from GitHub'
         uses: actions/checkout@v3
-      - name: "⏫ Run rclone"
+      - name: '⏫ Run rclone'
         uses: digital-clouds/rclone-action@main
         with:
           config: ${{ secrets.FLEEK_RCLONE_CONFIG }}
-          args: "sync ${{ env.local_path }} ${{ env.remote_path }}"
+          args: 'sync ${{ env.local_path }} ${{ env.remote_path }}'
           debug: false
