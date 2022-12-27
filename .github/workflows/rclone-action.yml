@@ -22,7 +22,7 @@ jobs:
       - name: "⤵️ Check out code from GitHub"
         uses: actions/checkout@v3
       - name: "⏫ Run rclone"
-        uses: digital-clouds/rclone-action@v1.0.0
+        uses: digital-clouds/rclone-action@main
         with:
           config: ${{ secrets.FLEEK_RCLONE_CONFIG }}
           args: "sync ${{ env.local_path }} ${{ env.remote_path }}"
