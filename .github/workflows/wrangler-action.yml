@@ -4,6 +4,7 @@ name: '🤠 Wrangler'
 on:
   push:
     branches: [main]
+    paths: [workers/**]
   schedule:
     - cron: '0 02 * * */2'
   workflow_dispatch:
@@ -13,12 +14,11 @@ on:
         default: 'prod'
         required: true
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
 jobs:
   deploy:
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true  
     runs-on: ubuntu-latest
     timeout-minutes: 15
     environment: wrangler
