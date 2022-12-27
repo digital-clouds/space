@@ -1,0 +1,29 @@
+---
+name: "🔄 Rclone"
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "ipfs/**"
+  workflow_dispatch: {}
+
+jobs:
+  sync:
+    if: github.repository == 'digital-clouds/space'
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+    env:
+      local_path: "ipfs/2ee30c81-79ef-44d3-b487-c90bf9cff679"
+      remote_path: "fleek:2ee30c81-79ef-44d3-b487-c90bf9cff679"
+    steps:
+      - name: "⤵️ Check out code from GitHub"
+        uses: actions/checkout@v3
+      - name: "⏫ Run rclone"
+        uses: digital-clouds/rclone-action@v1.0.0
+        with:
+          config: ${{ secrets.FLEEK_RCLONE_CONFIG }}
+          args: "sync ${{ env.local_path }} ${{ env.remote_path }}"
+          debug: false
