@@ -1,36 +1,36 @@
 {
-  "name": "space",
-  "version": "1.0.0",
-  "description": "",
-  "license": "GPL-3.0",
-  "scripts": {
-    "clean": "pnpm -sr exec rm -rf node_modules",
-    "preinstall": "npx only-allow pnpm",
-    "postinstall": "pnpm audit",
-    "upgrade": "pnpm upgrade -i -L",
-    "deploy:digital-space": "pnpm -rs run --filter digital-space deploy",
-    "deploy:ipfs-space": "pnpm -rs run --filter ipfs-space deploy",
-    "deploy:gcp-space": "pnpm -rs run --filter gcp-space deploy",
-    "dev:digital-space": "pnpm -rs run --filter digital-space dev",
-    "dev:ipfs-space": "pnpm -rs run --filter ipfs-space dev",
-    "dev:gcp-space": "pnpm -rs run --filter gcp-space dev",
-    "fmt": "trunk fmt",
-    "check": "trunk check",
-    "tsc": "pnpm -r exec tsc"
-  },
-  "devDependencies": {
-    "@trunkio/launcher": "1.2.3",
-    "@typescript-eslint/eslint-plugin": "^5.47.1",
-    "@typescript-eslint/parser": "^5.47.1",
-    "eslint": "^8.30.0",
-    "eslint-config-prettier": "8.5.0",
-    "eslint-import-resolver-typescript": "3.5.2",
-    "eslint-plugin-import": "2.26.0",
-    "prettier": "2.8.1",
-    "typescript": "4.5.4"
-  },
-  "engines": {
-    "node": ">=16.14.0"
-  },
-  "packageManager": "pnpm@7.20.0"
+	"name": "space",
+	"version": "1.0.0",
+	"description": "",
+	"license": "GPL-3.0",
+	"scripts": {
+		"clean": "pnpm -sr exec rm -rf node_modules",
+		"preinstall": "npx only-allow pnpm",
+		"postinstall": "pnpm audit",
+		"upgrade": "pnpm upgrade -i -L",
+		"deploy:digital-space": "pnpm -rs run --filter digital-space deploy",
+		"deploy:ipfs-space": "pnpm -rs run --filter ipfs-space deploy",
+		"deploy:gcp-space": "pnpm -rs run --filter gcp-space deploy",
+		"dev:digital-space": "pnpm -rs run --filter digital-space dev",
+		"dev:ipfs-space": "pnpm -rs run --filter ipfs-space dev",
+		"dev:gcp-space": "pnpm -rs run --filter gcp-space dev",
+		"fmt": "trunk fmt",
+		"check": "trunk check",
+		"typecheck": "pnpm -r run tsc"
+	},
+	"devDependencies": {
+		"@trunkio/launcher": "1.2.3",
+		"@typescript-eslint/eslint-plugin": "^5.47.1",
+		"@typescript-eslint/parser": "^5.47.1",
+		"eslint": "^8.30.0",
+		"eslint-config-prettier": "8.5.0",
+		"eslint-import-resolver-typescript": "3.5.2",
+		"eslint-plugin-import": "2.26.0",
+		"prettier": "2.8.1",
+		"typescript": "4.5.4"
+	},
+	"engines": {
+		"node": ">=16.14.0"
+	},
+	"packageManager": "pnpm@7.20.0"
 }

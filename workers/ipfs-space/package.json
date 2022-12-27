@@ -6,6 +6,7 @@
 		"deploy": "wrangler publish src/index.ts",
 		"dev": "wrangler dev src/index.ts --local",
 		"test": "vitest",
+		"tsc": "tsc",
 		"start-stackblitz": "WRANGLER_SEND_METRICS=false wrangler dev src/index.ts --local"
 	},
 	"devDependencies": {
