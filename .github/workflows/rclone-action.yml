@@ -24,6 +24,6 @@ jobs:
       - name: '⏫ Run rclone'
         uses: digital-clouds/rclone-action@main
         with:
-          config: ${{ secrets.FLEEK_RCLONE_CONFIG }}
+          config: ${{ secrets.R2_RCLONE_CONFIG }}
           args: 'sync ${{ env.local_path }} ${{ env.remote_path }}'
           debug: false
