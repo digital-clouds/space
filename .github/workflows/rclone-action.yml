@@ -5,7 +5,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'ipfs/**'
+      - 'r2/**'
   workflow_dispatch: {}
 
 jobs:
@@ -16,8 +16,8 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true
     env:
-      local_path: 'ipfs/2ee30c81-79ef-44d3-b487-c90bf9cff679'
-      remote_path: 'fleek:2ee30c81-79ef-44d3-b487-c90bf9cff679'
+      local_path: 'r2'
+      remote_path: 'r2:space'
     steps:
       - name: '⤵️ Check out code from GitHub'
         uses: actions/checkout@v3
