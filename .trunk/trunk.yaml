@@ -1,16 +1,12 @@
 version: 0.1
 cli:
   version: 1.2.1
-  options:
-    - commands: [ALL]
-      args: --monitor=true
-    - commands: [check]
-      args: -y
 plugins:
   sources:
     - id: trunk
       ref: v0.0.8
       uri: https://github.com/trunk-io/plugins
+      import_to_global: true
 repo:
   repo:
     host: github.com
@@ -28,6 +24,7 @@ lint:
   ignore:
     - linters: [ALL]
       paths:
+        - r2/*
         - gcs/*
         - ipfs/*
 runtimes:
