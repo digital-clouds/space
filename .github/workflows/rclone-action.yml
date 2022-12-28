@@ -16,7 +16,7 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true
     env:
-      local_path: 'r2'
+      local_path: './r2'
       remote_path: 'r2:space'
     steps:
       - name: '⤵️ Check out code from GitHub'
