@@ -20,13 +20,13 @@
 	},
 	"devDependencies": {
 		"@trunkio/launcher": "1.2.3",
-		"@typescript-eslint/eslint-plugin": "^5.47.1",
-		"@typescript-eslint/parser": "^5.47.1",
-		"eslint": "^8.30.0",
+		"@typescript-eslint/eslint-plugin": "^5.48.1",
+		"@typescript-eslint/parser": "^5.48.1",
+		"eslint": "^8.31.0",
 		"eslint-config-prettier": "8.6.0",
 		"eslint-import-resolver-typescript": "3.5.3",
 		"eslint-plugin-import": "2.27.4",
-		"prettier": "2.8.2",
+		"prettier": "2.8.3",
 		"typescript": "4.9.4"
 	},
 	"engines": {

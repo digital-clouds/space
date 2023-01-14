@@ -25,5 +25,5 @@ jobs:
         uses: digital-clouds/rclone-action@main
         with:
           config: ${{ secrets.R2_RCLONE_CONFIG }}
-          args: 'sync ${{ env.local_path }} ${{ env.remote_path }}'
+          args: 'copy -M ${{ env.local_path }} ${{ env.remote_path }}'
           debug: false
