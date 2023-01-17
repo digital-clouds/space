@@ -14,7 +14,7 @@ repo:
     name: space
 lint:
   enabled:
-    - eslint@8.31.0
+    - eslint@8.32.0
     - git-diff-check
     - actionlint@1.6.22
     - gitleaks@8.15.2
