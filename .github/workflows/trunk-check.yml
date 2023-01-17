@@ -25,9 +25,7 @@ jobs:
         with:
           node-version: 18
           cache: 'pnpm'
-          always-auth: true
-          check-latest: true
       - name: '🏗  Install Dependencies'
-        run: pnpm install
+        run: pnpm i
       - name: '⭕ Trunk Check'
         uses: trunk-io/trunk-action@9cf65e08e822e9842fd9ef7ed2a2bd9092de0986
