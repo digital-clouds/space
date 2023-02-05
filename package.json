@@ -6,7 +6,6 @@
 	"scripts": {
 		"clean": "pnpm -sr exec rm -rf node_modules",
 		"preinstall": "npx only-allow pnpm",
-		"postinstall": "pnpm audit",
 		"upgrade": "pnpm upgrade -i -L",
 		"deploy:digital-space": "pnpm -rs run --filter digital-space deploy",
 		"deploy:ipfs-space": "pnpm -rs run --filter ipfs-space deploy",
@@ -32,10 +31,11 @@
 	"engines": {
 		"node": ">=16.14.0"
 	},
-	"packageManager": "pnpm@7.21.0",
+	"packageManager": "pnpm@7.26.0",
 	"pnpm": {
 		"overrides": {
-			"json5@<2.2.2": ">=2.2.2"
+			"json5@<2.2.2": ">=2.2.2",
+			"http-cache-semantics@<4.1.1": ">=4.1.1"
 		}
 	}
 }
