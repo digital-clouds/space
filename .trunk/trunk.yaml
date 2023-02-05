@@ -24,9 +24,9 @@ lint:
   ignore:
     - linters: [ALL]
       paths:
-        - r2/*
-        - gcs/*
-        - ipfs/*
+        - 'r2/*'
+        - 'gcs/*'
+        - 'ipfs/*'
 runtimes:
   enabled:
     - go@1.19.4
