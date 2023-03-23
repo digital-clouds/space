@@ -1,41 +1,42 @@
 {
-	"name": "space",
-	"version": "1.0.0",
-	"description": "",
-	"license": "GPL-3.0",
-	"scripts": {
-		"clean": "pnpm -sr exec rm -rf node_modules",
-		"preinstall": "npx only-allow pnpm",
-		"upgrade": "pnpm upgrade -i -L",
-		"deploy:digital-space": "pnpm -rs run --filter digital-space deploy",
-		"deploy:ipfs-space": "pnpm -rs run --filter ipfs-space deploy",
-		"deploy:gcp-space": "pnpm -rs run --filter gcp-space deploy",
-		"dev:digital-space": "pnpm -rs run --filter digital-space dev",
-		"dev:ipfs-space": "pnpm -rs run --filter ipfs-space dev",
-		"dev:gcp-space": "pnpm -rs run --filter gcp-space dev",
-		"fmt": "trunk fmt",
-		"check": "trunk check",
-		"typecheck": "pnpm -r run tsc"
-	},
-	"devDependencies": {
-		"@trunkio/launcher": "1.2.3",
-		"@typescript-eslint/eslint-plugin": "^5.48.2",
-		"@typescript-eslint/parser": "^5.48.2",
-		"eslint": "^8.32.0",
-		"eslint-config-prettier": "8.7.0",
-		"eslint-import-resolver-typescript": "3.5.3",
-		"eslint-plugin-import": "2.27.5",
-		"prettier": "2.8.4",
-		"typescript": "4.9.5"
-	},
-	"engines": {
-		"node": ">=16.14.0"
-	},
-	"packageManager": "pnpm@7.26.3",
-	"pnpm": {
-		"overrides": {
-			"json5@<2.2.2": ">=2.2.2",
-			"http-cache-semantics@<4.1.1": ">=4.1.1"
-		}
-	}
+  "name": "space",
+  "version": "1.0.0",
+  "description": "",
+  "license": "GPL-3.0",
+  "scripts": {
+    "clean": "pnpm -sr exec rm -rf node_modules",
+    "preinstall": "npx only-allow pnpm",
+    "upgrade": "pnpm upgrade -i -L",
+    "deploy:digital-space": "pnpm -rs run --filter digital-space deploy",
+    "deploy:ipfs-space": "pnpm -rs run --filter ipfs-space deploy",
+    "deploy:gcp-space": "pnpm -rs run --filter gcp-space deploy",
+    "dev:digital-space": "pnpm -rs run --filter digital-space dev",
+    "dev:ipfs-space": "pnpm -rs run --filter ipfs-space dev",
+    "dev:gcp-space": "pnpm -rs run --filter gcp-space dev",
+    "fmt": "trunk fmt",
+    "trunk": "trunk",
+    "check": "trunk check",
+    "typecheck": "pnpm -r run tsc"
+  },
+  "devDependencies": {
+    "@trunkio/launcher": "1.2.3",
+    "@typescript-eslint/eslint-plugin": "^5.56.0",
+    "@typescript-eslint/parser": "^5.56.0",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "8.8.0",
+    "eslint-import-resolver-typescript": "3.5.3",
+    "eslint-plugin-import": "2.27.5",
+    "prettier": "2.8.6",
+    "typescript": "5.0.2"
+  },
+  "engines": {
+    "node": ">=16.14.0"
+  },
+  "packageManager": "pnpm@7.26.3",
+  "pnpm": {
+    "overrides": {
+      "json5@<2.2.2": ">=2.2.2",
+      "http-cache-semantics@<4.1.1": ">=4.1.1"
+    }
+  }
 }

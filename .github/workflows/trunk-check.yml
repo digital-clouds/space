@@ -1,9 +1,9 @@
 ---
-name: '⭕ Trunk'
+name: "⭕ Trunk"
 on:
   push:
     branches: [main]
-    tags: ['v*.*.*']
+    tags: ["v*.*.*"]
   pull_request:
     types: [opened, synchronize]
   workflow_dispatch: {}
@@ -16,16 +16,16 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - name: '⤵️  Check out code from GitHub'
+      - name: "⤵️  Check out code from GitHub"
         uses: actions/checkout@v3
-      - name: '🏗  Initialize PNPM'
+      - name: "🏗  Initialize PNPM"
         uses: pnpm/action-setup@v2.2.4
-      - name: '🏗  Initialize Node'
+      - name: "🏗  Initialize Node"
         uses: actions/setup-node@v3
         with:
           node-version: 18
-          cache: 'pnpm'
-      - name: '🏗  Install Dependencies'
+          cache: "pnpm"
+      - name: "🏗  Install Dependencies"
         run: pnpm i
-      - name: '⭕ Trunk Check'
+      - name: "⭕ Trunk Check"
         uses: trunk-io/trunk-action@b033203e937f42022e351f1313cf84123c4472df

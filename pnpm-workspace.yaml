@@ -1,4 +1,4 @@
 packages:
-  - 'workers/*'
-  - 'packages/*'
+  - "workers/*"
+  - "packages/*"
 auto-install-peers: true

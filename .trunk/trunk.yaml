@@ -1,40 +1,42 @@
 version: 0.1
 cli:
-  version: 1.4.1
+  version: 1.6.1
 plugins:
   sources:
     - id: trunk
-      ref: v0.0.9
+      ref: v0.0.13
       uri: https://github.com/trunk-io/plugins
-      import_to_global: true
 repo:
   repo:
     host: github.com
     owner: digital-clouds
     name: space
 lint:
+  disabled:
+    - yamllint
   enabled:
-    - eslint@8.33.0
-    - git-diff-check
     - actionlint@1.6.23
-    - gitleaks@8.15.3
+    - eslint@8.36.0
+    - git-diff-check
+    - gitleaks@8.16.1
     - markdownlint@0.33.0
-    - prettier@2.8.3
+    - prettier@2.8.6
+    - svgo@3.0.2
     - taplo@0.7.0
   ignore:
     - linters: [ALL]
       paths:
-        - 'r2/*'
-        - 'gcs/*'
-        - 'ipfs/*'
+        - r2/**
+        - gcs/**
+        - ipfs/**
 runtimes:
   enabled:
-    - go@1.19.4
+    - go@1.19.5
     - node@18.12.1
+    - python@3.10.8
 actions:
   enabled:
     - trunk-announce
     - trunk-check-pre-push
     - trunk-fmt-pre-commit
     - trunk-upgrade-available
-    - trunk-cache-prune

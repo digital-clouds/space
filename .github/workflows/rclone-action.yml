@@ -1,11 +1,11 @@
 ---
-name: '🔄 Rclone Action'
+name: "🔄 Rclone Action"
 
 on:
   push:
     branches: [main]
     paths:
-      - 'r2/**'
+      - "r2/**"
   workflow_dispatch: {}
 
 jobs:
@@ -16,14 +16,14 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true
     env:
-      local_path: './r2'
-      remote_path: 'r2:space'
+      local_path: "./r2"
+      remote_path: "r2:space"
     steps:
-      - name: '⤵️ Check out code from GitHub'
+      - name: "⤵️ Check out code from GitHub"
         uses: actions/checkout@v3
-      - name: '⏫ Run rclone'
+      - name: "⏫ Run rclone"
         uses: digital-clouds/rclone-action@main
         with:
           config: ${{ secrets.R2_RCLONE_CONFIG }}
-          args: 'copy -M ${{ env.local_path }} ${{ env.remote_path }}'
+          args: "copy -M ${{ env.local_path }} ${{ env.remote_path }}"
           debug: false
