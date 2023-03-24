@@ -28,4 +28,4 @@ jobs:
       - name: "🏗  Install Dependencies"
         run: pnpm i
       - name: "⭕ Trunk Check"
-        uses: trunk-io/trunk-action@efaa03c5490bd81d8f2625163670856b09f95350
+        uses: trunk-io/trunk-action@207790ef4eeb55aedab74152c78712209f06881a
