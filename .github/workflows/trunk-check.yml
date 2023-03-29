@@ -26,6 +26,6 @@ jobs:
           node-version: 18
           cache: "pnpm"
       - name: "🏗  Install Dependencies"
-        run: pnpm i
+        run: pnpm i --no-frozen-lockfile
       - name: "⭕ Trunk Check"
         uses: trunk-io/trunk-action@207790ef4eeb55aedab74152c78712209f06881a
