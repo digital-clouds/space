@@ -32,7 +32,7 @@
   "engines": {
     "node": ">=16.14.0"
   },
-  "packageManager": "pnpm@7.30.3",
+  "packageManager": "pnpm@8.0.0",
   "pnpm": {
     "overrides": {
       "json5@<2.2.2": ">=2.2.2",
