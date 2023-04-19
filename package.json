@@ -19,7 +19,7 @@
     "typecheck": "pnpm -r run tsc"
   },
   "devDependencies": {
-    "@trunkio/launcher": "1.2.3",
+    "@trunkio/launcher": "1.2.4",
     "@typescript-eslint/eslint-plugin": "^5.57.0",
     "@typescript-eslint/parser": "^5.57.0",
     "eslint": "^8.37.0",
