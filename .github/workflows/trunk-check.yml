@@ -28,4 +28,4 @@ jobs:
       - name: "🏗  Install Dependencies"
         run: pnpm i --no-frozen-lockfile
       - name: "⭕ Trunk Check"
-        uses: trunk-io/trunk-action@7b2775ca209d002ca0afa8c15c2c6acdf6fb4ba1
+        uses: trunk-io/trunk-action@2db7c2acfdbc3cab84be2640306ef138147dd116
