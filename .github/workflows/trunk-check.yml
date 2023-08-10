@@ -19,7 +19,7 @@ jobs:
       - name: "⤵️  Check out code from GitHub"
         uses: actions/checkout@v3
       - name: "🏗  Initialize PNPM"
-        uses: pnpm/action-setup@v2.2.4
+        uses: pnpm/action-setup@v2.4.0
       - name: "🏗  Initialize Node"
         uses: actions/setup-node@v3
         with:
