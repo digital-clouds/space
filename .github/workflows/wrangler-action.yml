@@ -26,13 +26,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: "🤠 Digital Space"
-        uses: cloudflare/wrangler-action@v3.1.0
+        uses: cloudflare/wrangler-action@v3.1.1
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           workingDirectory: "workers/digital-space"
           command: publish
       - name: "🤠 GCP Space"
-        uses: cloudflare/wrangler-action@v3.1.0
+        uses: cloudflare/wrangler-action@v3.1.1
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           workingDirectory: "workers/gcp-space"
