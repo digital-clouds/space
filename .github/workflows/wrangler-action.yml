@@ -24,7 +24,7 @@ jobs:
     environment: wrangler
     if: github.repository == 'digital-clouds/space'
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: "🤠 Digital Space"
         uses: cloudflare/wrangler-action@v3.1.1
         with:
