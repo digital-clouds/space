@@ -16,13 +16,13 @@ importers:
         specifier: 1.3.0
         version: 1.3.0
       '@typescript-eslint/eslint-plugin':
-        specifier: ^7.0.2
+        specifier: 7.0.2
         version: 7.0.2(@typescript-eslint/parser@7.0.2)(eslint@8.56.0)(typescript@5.3.3)
       '@typescript-eslint/parser':
-        specifier: ^7.0.2
+        specifier: 7.0.2
         version: 7.0.2(eslint@8.56.0)(typescript@5.3.3)
       eslint:
-        specifier: ^8.38.0
+        specifier: 8.56.0
         version: 8.56.0
       eslint-config-prettier:
         specifier: 9.1.0
@@ -43,64 +43,64 @@ importers:
   workers/digital-space:
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: ^4.20230404.0
+        specifier: 4.20240222.0
         version: 4.20240222.0
       '@types/jest':
-        specifier: ^29.5.1
+        specifier: 29.5.12
         version: 29.5.12
       '@types/node':
         specifier: 20.11.20
         version: 20.11.20
       typescript:
-        specifier: ^5.0.4
+        specifier: 5.3.3
         version: 5.3.3
       vitest:
-        specifier: ^1.0.0
+        specifier: 1.3.1
         version: 1.3.1(@types/node@20.11.20)
       wrangler:
-        specifier: ^3.1.1
+        specifier: 3.29.0
         version: 3.29.0(@cloudflare/workers-types@4.20240222.0)
 
   workers/gcp-space:
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: ^4.20230404.0
+        specifier: 4.20240222.0
         version: 4.20240222.0
       '@types/jest':
-        specifier: ^29.5.1
+        specifier: 29.5.12
         version: 29.5.12
       '@types/node':
         specifier: 20.11.20
         version: 20.11.20
       typescript:
-        specifier: ^5.0.4
+        specifier: 5.3.3
         version: 5.3.3
       vitest:
-        specifier: ^1.0.0
+        specifier: 1.3.1
         version: 1.3.1(@types/node@20.11.20)
       wrangler:
-        specifier: ^3.1.1
+        specifier: 3.29.0
         version: 3.29.0(@cloudflare/workers-types@4.20240222.0)
 
   workers/ipfs-space:
     devDependencies:
       '@cloudflare/workers-types':
-        specifier: ^4.20230404.0
+        specifier: 4.20240222.0
         version: 4.20240222.0
       '@types/jest':
-        specifier: ^29.5.1
+        specifier: 29.5.12
         version: 29.5.12
       '@types/node':
         specifier: 20.11.20
         version: 20.11.20
       typescript:
-        specifier: ^5.0.4
+        specifier: 5.3.3
         version: 5.3.3
       vitest:
-        specifier: ^1.0.0
+        specifier: 1.3.1
         version: 1.3.1(@types/node@20.11.20)
       wrangler:
-        specifier: ^3.1.1
+        specifier: 3.29.0
         version: 3.29.0(@cloudflare/workers-types@4.20240222.0)
 
 packages:
