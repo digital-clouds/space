@@ -1,10 +1,10 @@
 version: 0.1
 cli:
-  version: 1.8.0
+  version: 1.20.1
 plugins:
   sources:
     - id: trunk
-      ref: v0.0.16
+      ref: v1.2.1
       uri: https://github.com/trunk-io/plugins
 repo:
   repo:
@@ -15,15 +15,15 @@ lint:
   disabled:
     - yamllint
   enabled:
-    - renovate@35.53.0
-    - actionlint@1.6.24
-    - eslint@8.38.0
+    - renovate@37.210.0
+    - actionlint@1.6.26
+    - eslint@8.56.0
     - git-diff-check
-    - gitleaks@8.16.2
-    - markdownlint@0.33.0
-    - prettier@2.8.7
-    - svgo@3.0.2
-    - taplo@0.7.0
+    - gitleaks@8.18.2
+    - markdownlint@0.39.0
+    - prettier@3.2.5
+    - svgo@3.2.0
+    - taplo@0.8.1
   ignore:
     - linters: [ALL]
       paths:
