@@ -1,9 +1,6 @@
 ---
 name: "⭕ Trunk"
 on:
-  push:
-    branches: [main]
-    tags: ["v*.*.*"]
   pull_request:
     types: [opened, synchronize]
   workflow_dispatch: {}
@@ -20,15 +17,15 @@ jobs:
       contents: read # For repo checkout    
     steps:
       - name: "⤵️  Check out code from GitHub"
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+        uses: actions/checkout@v4
       - name: "🏗  Initialize PNPM"
-        uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d # v3.0.0
+        uses: pnpm/action-setup@v3
       - name: "🏗  Initialize Node"
-        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: "pnpm"
       - name: "🏗  Install Dependencies"
         run: pnpm i --no-frozen-lockfile
       - name: "⭕ Trunk Check"
-        uses: trunk-io/trunk-action@76fcbaff0ca53cae6547c50076a8c477d36cf54a
+        uses: trunk-io/trunk-action@v1
