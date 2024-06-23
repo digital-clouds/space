@@ -17,15 +17,15 @@ jobs:
       contents: read # For repo checkout
     steps:
       - name: "⤵️  Check out code from GitHub"
-        uses: actions/checkout@v4
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
       - name: "🏗  Initialize PNPM"
         uses: pnpm/action-setup@v4
       - name: "🏗  Initialize Node"
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4
         with:
           node-version: 20
           cache: "pnpm"
       - name: "🏗  Install Dependencies"
         run: pnpm i --no-frozen-lockfile
       - name: "⭕ Trunk Check"
-        uses: trunk-io/trunk-action@v1
+        uses: trunk-io/trunk-action@f6c5f1b90503c30e02059667dbc247f2257b63c5 # v1
