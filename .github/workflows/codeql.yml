@@ -19,7 +19,7 @@ jobs:
       security-events: write
     steps:
       - name: ⤵️ Check out code from GitHub
-        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4
+        uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4
       - name: 🏗 Initialize CodeQL
         uses: github/codeql-action/init@4fa2a7953630fd2f3fb380f21be14ede0169dd4f # v3
       - name: 🏗 Autobuild
