@@ -10,7 +10,7 @@
 		"start-stackblitz": "WRANGLER_SEND_METRICS=false wrangler dev src/index.ts --local"
 	},
 	"devDependencies": {
-		"@cloudflare/workers-types": "4.20240620.0",
+		"@cloudflare/workers-types": "4.20250321.0",
 		"@types/jest": "29.5.14",
 		"@types/node": "20.14.15",
 		"typescript": "5.5.2",
