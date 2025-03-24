@@ -1,4 +1,8 @@
 packages:
-  - "workers/*"
-  - "packages/*"
+  - workers/*
+  - packages/*
 auto-install-peers: true
+onlyBuiltDependencies:
+  - esbuild
+  - sharp
+  - workerd
