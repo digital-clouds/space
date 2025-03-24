@@ -17,8 +17,8 @@ importers:
   .:
     devDependencies:
       '@trunkio/launcher':
-        specifier: 1.3.1
-        version: 1.3.1
+        specifier: 1.3.4
+        version: 1.3.4
       '@typescript-eslint/eslint-plugin':
         specifier: 7.13.1
         version: 7.13.1(@typescript-eslint/parser@7.13.1(eslint@9.5.0)(typescript@5.5.2))(eslint@9.5.0)(typescript@5.5.2)
@@ -597,8 +597,8 @@ packages:
   '@sinclair/typebox@0.27.8':
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
 
-  '@trunkio/launcher@1.3.1':
-    resolution: {integrity: sha512-30gcw/pc+hmzXR8qHM0ND1kYgwnAjze3Xsnw3AUvxO9G4JzKF8u6FDy/6qbYKZxJ6Wr4SE0E0L7ZrAEA8Nia5Q==}
+  '@trunkio/launcher@1.3.4':
+    resolution: {integrity: sha512-4LCsFVvZtKht7EkbOq5gDsRLIBOH05ycNxm1Vrv+YzY+uOK2HueLBcLU8oejV9v01LTtWjfLJxonIgTSo7lwng==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -2304,7 +2304,7 @@ snapshots:
 
   '@sinclair/typebox@0.27.8': {}
 
-  '@trunkio/launcher@1.3.1':
+  '@trunkio/launcher@1.3.4':
     dependencies:
       semver: 7.6.2
       tar: 6.2.1
