@@ -25,7 +25,7 @@ jobs:
     environment: google-cloud
     if: github.repository == 'digital-clouds/space'
     steps:
-      - uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - id: "auth"
         uses: google-github-actions/auth@71f986410dfbc7added4569d411d040a91dc6935 # v2
         with:
