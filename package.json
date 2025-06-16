@@ -27,7 +27,7 @@
     "eslint-import-resolver-typescript": "4.2.7",
     "eslint-plugin-import": "2.31.0",
     "prettier": "3.5.3",
-    "typescript": "5.8.2"
+    "typescript": "5.8.3"
   },
   "engines": {
     "node": ">=22"
