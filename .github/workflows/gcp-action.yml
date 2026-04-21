@@ -25,7 +25,7 @@ jobs:
     environment: production
     if: github.repository == 'digital-clouds/space'
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v4
       - id: "auth"
         uses: google-github-actions/auth@7c6bc770dae815cd3e89ee6cdf493a5fab2cc093 # v2
         with:
@@ -34,14 +34,14 @@ jobs:
       - if: startsWith(matrix.bucket, 'digital-space')
         name: "📤 digital-space"
         id: "upload-digital-space"
-        uses: "google-github-actions/upload-cloud-storage@7c73f5d6eae167341002e9c946f7479a609c588e" # v2
+        uses: "google-github-actions/upload-cloud-storage@6397bd7208e18d13ba2619ee21b9873edc94427a" # v2
         with:
           path: "gcs/63ab8820-bc9f-43aa-9045-801ac5af4bb6"
           destination: "digital-space"
       - if: startsWith(matrix.bucket, 'gcp-space')
         name: "📤 gcp-space"
         id: "upload-gcp-space"
-        uses: "google-github-actions/upload-cloud-storage@7c73f5d6eae167341002e9c946f7479a609c588e" # v2
+        uses: "google-github-actions/upload-cloud-storage@6397bd7208e18d13ba2619ee21b9873edc94427a" # v2
         with:
           path: "gcs/2d8aa135-97c0-4ab1-8443-2eafcec4055e"
           destination: "gcp-space"
