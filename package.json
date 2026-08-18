@@ -24,7 +24,7 @@
     "@typescript-eslint/parser": "8.34.1",
     "eslint": "9.29.0",
     "eslint-config-prettier": "10.1.8",
-    "eslint-import-resolver-typescript": "4.4.3",
+    "eslint-import-resolver-typescript": "4.4.5",
     "eslint-plugin-import": "2.31.0",
     "prettier": "3.5.3",
     "typescript": "5.8.3"
