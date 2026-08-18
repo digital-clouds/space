@@ -22,7 +22,7 @@ jobs:
       - name: "⤵️ Check out code from GitHub"
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v4
       - name: "⏫ Run rclone"
-        uses: digital-clouds/rclone-action@main
+        uses: digital-clouds/rclone-action@92458fad31e342e651ba19073fa568bccb5fa096 # main
         with:
           config: ${{ secrets.R2_RCLONE_CONFIG }}
           args: "copy -M ${{ env.local_path }} ${{ env.remote_path }}"
