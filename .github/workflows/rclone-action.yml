@@ -20,7 +20,7 @@ jobs:
       remote_path: 'r2:space'
     steps:
       - name: '⤵️ Check out code from GitHub'
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: '⏫ Run rclone'
         uses: digital-clouds/rclone-action@2844812fbdadaa89e5047136a3fcd0f3a2fb3b51 # v1.0.0
         with:
