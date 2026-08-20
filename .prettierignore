@@ -1,0 +1,8 @@
+node_modules
+pnpm-lock.yaml
+dist
+build
+.trunk
+r2/**
+gcs/**
+ipfs/**

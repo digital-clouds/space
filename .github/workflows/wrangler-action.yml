@@ -1,17 +1,17 @@
 ---
-name: "🤠 Wrangler Action"
+name: '🤠 Wrangler Action'
 
 on:
   push:
     branches: [main]
     paths: [workers/**]
   schedule:
-    - cron: "0 02 * * */2"
+    - cron: '0 02 * * */2'
   workflow_dispatch:
     inputs:
       environment:
-        description: "Choose an environment to deploy to: <dev|staging|prod>"
-        default: "prod"
+        description: 'Choose an environment to deploy to: <dev|staging|prod>'
+        default: 'prod'
         required: true
 
 jobs:
@@ -24,16 +24,16 @@ jobs:
     environment: production
     if: github.repository == 'digital-clouds/space'
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: "🤠 Digital Space"
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: '🤠 Digital Space'
         uses: cloudflare/wrangler-action@ebbaa1584979971c8614a24965b4405ff95890e0 # v4.0.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          workingDirectory: "workers/digital-space"
-          command: publish
-      - name: "🤠 GCP Space"
+          workingDirectory: 'workers/digital-space'
+          command: deploy
+      - name: '🤠 GCP Space'
         uses: cloudflare/wrangler-action@ebbaa1584979971c8614a24965b4405ff95890e0 # v4.0.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
-          workingDirectory: "workers/gcp-space"
-          command: publish
+          workingDirectory: 'workers/gcp-space'
+          command: deploy

@@ -1,11 +1,101 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
-
 version: 2
 updates:
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  # GitHub Actions updates
+  - package-ecosystem: 'github-actions'
+    directory: '/'
     schedule:
-      interval: "daily"
+      interval: 'daily'
+      time: '04:00'
+      timezone: 'UTC'
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: 'chore(deps)'
+      include: 'scope'
+    labels:
+      - 'dependencies'
+      - 'github-actions'
+    groups:
+      github-actions:
+        patterns:
+          - '*'
+
+  # Root workspace npm dependencies
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+      time: '04:00'
+      timezone: 'UTC'
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: 'chore(deps)'
+      include: 'scope'
+    labels:
+      - 'dependencies'
+      - 'npm'
+    groups:
+      dev-dependencies:
+        dependency-type: 'development'
+        patterns:
+          - '*'
+      dependencies:
+        dependency-type: 'production'
+        patterns:
+          - '*'
+
+  # digital-space worker npm dependencies
+  - package-ecosystem: 'npm'
+    directory: '/workers/digital-space'
+    schedule:
+      interval: 'daily'
+      time: '04:00'
+      timezone: 'UTC'
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: 'chore(deps)'
+      include: 'scope'
+    labels:
+      - 'dependencies'
+      - 'digital-space'
+    groups:
+      worker-dependencies:
+        patterns:
+          - '*'
+
+  # gcp-space worker npm dependencies
+  - package-ecosystem: 'npm'
+    directory: '/workers/gcp-space'
+    schedule:
+      interval: 'daily'
+      time: '04:00'
+      timezone: 'UTC'
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: 'chore(deps)'
+      include: 'scope'
+    labels:
+      - 'dependencies'
+      - 'gcp-space'
+    groups:
+      worker-dependencies:
+        patterns:
+          - '*'
+
+  # ipfs-space worker npm dependencies
+  - package-ecosystem: 'npm'
+    directory: '/workers/ipfs-space'
+    schedule:
+      interval: 'daily'
+      time: '04:00'
+      timezone: 'UTC'
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: 'chore(deps)'
+      include: 'scope'
+    labels:
+      - 'dependencies'
+      - 'ipfs-space'
+    groups:
+      worker-dependencies:
+        patterns:
+          - '*'
