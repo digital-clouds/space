@@ -9,10 +9,10 @@
     "tsc": "tsc"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "5.20260819.1",
-    "@types/node": "26.2.0",
+    "@cloudflare/workers-types": "5.20260908.1",
+    "@types/node": "26.5.0",
     "typescript": "7.0.2",
-    "vitest": "4.1.10",
-    "wrangler": "4.124.0"
+    "vitest": "5.0.0",
+    "wrangler": "4.129.1"
   }
 }
